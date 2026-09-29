@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<title>Személyi edző kezelő</title>
+<style>
+:root{--bg:#f4f4f5;--card:#fff;--tx:#0a0a0a;--mu:#6b6b70;--ac:#d90429;--ac2:#ff3b4e;--bd:#e4e4e7;--dg:#d90429;--sh:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.07);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--card:#111;--tx:#fff;--mu:#a1a1a6;--bd:#26262a;--sh:0 8px 24px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#000;--card:#111;--tx:#fff;--mu:#a1a1a6;--bd:#26262a;--sh:0 8px 24px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;min-height:100vh;-webkit-font-smoothing:antialiased}
+nav{width:240px;background:#0a0a0a;border-right:1px solid #26262a;padding:20px 12px;flex-shrink:0;position:sticky;top:0;height:100vh;align-self:flex-start;display:flex;flex-direction:column;gap:2px;overflow-y:auto}
+nav h1{font-size:18px;margin:0 8px 18px;font-weight:800;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;color:#fff;padding:10px 12px;border-radius:10px;cursor:pointer;font:inherit;font-size:14px;font-weight:500;transition:.15s}
+nav button i{font-style:normal;width:22px;text-align:center}
+nav button em{font-style:normal;flex:1}
+nav button:hover{background:rgba(255,255,255,.09)}
+nav button.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 4px 12px rgba(217,4,41,.35)}
+nav button span{font-size:11px;background:rgba(255,255,255,.14);padding:1px 8px;border-radius:99px}
+nav .theme{margin-top:auto;color:#a1a1a6;border:1px dashed #3a3a40}
+main{flex:1;padding:28px;min-width:0;max-width:1400px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:22px}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;box-shadow:var(--sh)}
+.stat .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:linear-gradient(135deg,rgba(217,4,41,.18),rgba(255,59,78,.28))}
+.stat small{display:block;color:var(--mu);font-size:12px}
+.stat b{font-size:20px;font-weight:700}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.bar h2{margin:0;flex:1;font-size:24px;font-weight:800;letter-spacing:-.02em}
+input,select,textarea{font:inherit;font-size:14px;padding:9px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);width:100%;transition:.15s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 3px rgba(217,4,41,.2)}
+.bar input{width:240px}
+.btn{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:0;border-radius:10px;padding:9px 16px;cursor:pointer;font:inherit;font-size:14px;font-weight:600;width:auto;transition:.15s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn.ghost{background:none;color:var(--tx);border:1px solid var(--bd)}
+.btn.sm{padding:5px 10px;font-size:12px}
+.btn.del{background:none;color:var(--dg);border:1px solid var(--dg)}
+.btn.del:hover{background:var(--dg);color:#fff}
+.wrap{overflow:auto;max-height:calc(100vh - 290px);min-height:160px;background:var(--card);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh)}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:14px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--bd);white-space:nowrap;max-width:260px;overflow:hidden;text-overflow:ellipsis}
+th{position:sticky;top:0;background:var(--card);color:var(--mu);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em;z-index:1}
+tbody tr{animation:in .3s both;transition:background .15s}
+tbody tr:hover{background:rgba(217,4,41,.06)}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--mu);font-variant-numeric:tabular-nums}
+@keyframes in{from{opacity:0;transform:translateY(4px)}}
+.av{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-size:12px;font-weight:700;margin-right:8px;vertical-align:middle}
+.badge{border:1px solid transparent;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;background:rgba(127,127,127,.15);color:var(--mu)}
+.b-admin,.b-completed,.b-paid{background:var(--tx);color:var(--card)}.b-trainer{background:var(--ac);color:#fff}.b-client,.b-scheduled{background:none;border-color:var(--tx);color:var(--tx)}.b-cancelled,.b-failed{background:rgba(217,4,41,.14);border-color:var(--ac);color:var(--ac)}.b-pending{background:none;border:1px dashed var(--mu);color:var(--mu)}
+.empty{padding:50px 20px;text-align:center;color:var(--mu)}.empty div{font-size:40px;margin-bottom:8px}
+dialog{border:1px solid var(--bd);border-radius:16px;background:var(--card);color:var(--tx);width:min(460px,92vw);padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.35);animation:in .2s}
+dialog::backdrop{background:rgba(10,14,25,.55);backdrop-filter:blur(3px)}
+dialog h3{margin:0 0 6px;font-size:18px}
+label{display:block;font-size:12px;font-weight:600;color:var(--mu);margin:12px 0 5px}
+.acts{display:flex;gap:8px;justify-content:flex-end;margin-top:22px}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--dg);color:#fff;padding:12px 18px;border-radius:12px;display:none;box-shadow:var(--sh);z-index:9}
+@media(max-width:800px){body{flex-direction:column}nav{width:100%;height:auto;position:static;flex-direction:row;overflow-x:auto;padding:10px}nav h1{display:none}nav button{width:auto;white-space:nowrap}nav .theme{margin:0}main{padding:16px}.wrap{max-height:none}.bar input{width:100%}}
+</style>
+</head>
+<body>
+<nav id="nav"><h1>🏋️ Edző kezelő</h1></nav>
+<main>
+  <div class="stats" id="stats"></div>
+  <div class="bar">
+    <h2 id="title"></h2>
+    <input id="q" type="search" placeholder="Keresés…">
+    <button class="btn" id="add">+ Új</button>
+  </div>
+  <div class="wrap" id="tbl"></div>
+</main>
+<dialog id="dlg"><form id="frm" method="dialog"></form></dialog>
+<div class="toast" id="toast"></div>
+
+<script>
+// Séma: [mező, felirat, típus, extra]  típus: text,email,password,textarea,int,num,date,dt,enum,fk
+const T = {
+  users:{n:'Felhasználók',f:[['name','Név','text'],['email','Email','email'],['password_hash','Jelszó hash','password'],['role','Szerepkör','enum',['trainer','client','admin']],['created_at','Létrehozva','auto']]},
+  trainers:{n:'Edzők',f:[['user_id','Felhasználó','fk','users'],['bio','Bemutatkozás','textarea'],['specialization','Szakterület','text'],['hourly_rate','Óradíj','num']]},
+  clients:{n:'Kliensek',f:[['user_id','Felhasználó','fk','users'],['birth_date','Születési dátum','date'],['height_cm','Magasság (cm)','num'],['weight_kg','Testsúly (kg)','num'],['goal','Cél','text']]},
+  workout_plans:{n:'Edzéstervek',f:[['trainer_id','Edző','fk','trainers'],['client_id','Kliens','fk','clients'],['title','Cím','text'],['description','Leírás','textarea'],['start_date','Kezdés','date'],['end_date','Befejezés','date']]},
+  exercises:{n:'Gyakorlatok',f:[['name','Név','text'],['description','Leírás','textarea'],['muscle_group','Izomcsoport','text'],['video_url','Videó URL','text']]},
+  plan_exercises:{n:'Terv gyakorlatai',f:[['plan_id','Edzésterv','fk','workout_plans'],['exercise_id','Gyakorlat','fk','exercises'],['sets','Sorozat','int'],['reps','Ismétlés','int'],['weight_kg','Súly (kg)','num'],['day_of_week','Nap (1-7)','int']]},
+  appointments:{n:'Időpontok',f:[['trainer_id','Edző','fk','trainers'],['client_id','Kliens','fk','clients'],['start_time','Kezdés','dt'],['duration_minutes','Hossz (perc)','int'],['status','Státusz','enum',['scheduled','completed','cancelled']],['created_at','Létrehozva','auto']]},
+  payments:{n:'Fizetések',f:[['client_id','Kliens','fk','clients'],['amount','Összeg','num'],['paid_at','Fizetve','date'],['status','Státusz','enum',['pending','paid','failed']],['payment_method','Fizetési mód','text']]},
+  progress_logs:{n:'Haladás',f:[['client_id','Kliens','fk','clients'],['log_date','Dátum','date'],['weight_kg','Testsúly (kg)','num'],['body_fat_percent','Testzsír %','num'],['notes','Megjegyzés','textarea']]}
+};
+const now = () => new Date().toISOString().slice(0,16).replace('T',' ');
+const seed = () => ({
+  users:[{id:1,name:'Admin',email:'admin@edzo.hu',password_hash:'x',role:'admin',created_at:now()},{id:2,name:'Kovács Péter',email:'peter@edzo.hu',password_hash:'x',role:'trainer',created_at:now()},{id:3,name:'Nagy Anna',email:'anna@mail.hu',password_hash:'x',role:'client',created_at:now()},{id:4,name:'Tóth Gábor',email:'gabor@mail.hu',password_hash:'x',role:'client',created_at:now()}],
+  trainers:[{id:1,user_id:2,bio:'10 év tapasztalat',specialization:'Erősítés',hourly_rate:8000}],
+  clients:[{id:1,user_id:3,birth_date:'1995-04-12',height_cm:168,weight_kg:64,goal:'Fogyás'},{id:2,user_id:4,birth_date:'1988-09-03',height_cm:182,weight_kg:85,goal:'Izomtömeg'}],
+  workout_plans:[{id:1,trainer_id:1,client_id:1,title:'Kezdő teljes test',description:'3 napos terv',start_date:'2026-10-01',end_date:'2026-12-01'}],
+  exercises:[{id:1,name:'Guggolás',description:'Alap lábgyakorlat',muscle_group:'Comb',video_url:''},{id:2,name:'Fekvenyomás',description:'Mellizom',muscle_group:'Mell',video_url:''}],
+  plan_exercises:[{id:1,plan_id:1,exercise_id:1,sets:3,reps:12,weight_kg:20,day_of_week:1},{id:2,plan_id:1,exercise_id:2,sets:3,reps:10,weight_kg:30,day_of_week:3}],
+  appointments:[{id:1,trainer_id:1,client_id:1,start_time:'2026-10-05T10:00',duration_minutes:60,status:'scheduled',created_at:now()}],
+  payments:[{id:1,client_id:1,amount:8000,paid_at:'2026-10-01',status:'paid',payment_method:'kártya'}],
+  progress_logs:[{id:1,client_id:1,log_date:'2026-10-01',weight_kg:64,body_fat_percent:26.5,notes:'Kiindulási állapot'}]
+});
+let DB, cur = 'users';
+try { const s = localStorage.getItem('pt_db'); if (s) DB = JSON.parse(s); } catch(e) {}
+if (!DB) DB = seed();
+const save = () => { try { localStorage.setItem('pt_db', JSON.stringify(DB)); } catch(e) {} };
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const find = (t, id) => DB[t].find(r => r.id == id);
+function lab(t, id) {
+  const r = find(t, id); if (!r) return '—';
+  if (t === 'trainers' || t === 'clients') { const u = find('users', r.user_id); return u ? u.name : '#' + r.id; }
+  return r.name || r.title || '#' + r.id;
+}
+function toast(m) { const e = $('toast'); e.textContent = m; e.style.display = 'block'; setTimeout(() => e.style.display = 'none', 3000); }
+
+const IC={users:'👤',trainers:'🏅',clients:'🧑‍🤝‍🧑',workout_plans:'📋',exercises:'💪',plan_exercises:'🔁',appointments:'📅',payments:'💳',progress_logs:'📈'};
+function stats(){
+  const paid=DB.payments.filter(p=>p.status==='paid').reduce((a,p)=>a+(p.amount||0),0);
+  const up=DB.appointments.filter(a=>a.status==='scheduled').length;
+  const c=[['🧑‍🤝‍🧑','Kliens',DB.clients.length],['🏅','Edző',DB.trainers.length],['📅','Közelgő időpont',up],['💰','Befolyt bevétel',paid.toLocaleString('hu-HU')+' Ft']];
+  $('stats').innerHTML=c.map(x=>`<div class="stat"><div class="ic">${x[0]}</div><div><small>${x[1]}</small><b>${x[2]}</b></div></div>`).join('');
+}
+function nav() {
+  $('nav').innerHTML = '<h1>🏋️ Edző kezelő</h1>' + Object.keys(T).map(k =>
+    `<button class="${k===cur?'on':''}" data-t="${k}"><i>${IC[k]}</i><em>${T[k].n}</em><span>${DB[k].length}</span></button>`).join('') + '<button class="theme" id="th"><i>🌓</i><em>Téma váltás</em></button>';
+  $('th').onclick=()=>{const d=document.documentElement;const dark=(d.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'))==='dark';d.dataset.theme=dark?'light':'dark'};
+  $('nav').querySelectorAll('button').forEach(b => b.onclick = () => { cur = b.dataset.t; $('q').value = ''; render(); });
+}
+function cell(v, f) {
+  const [k, , type, ex] = f;
+  if (type === 'fk') { const l = lab(ex, v); return ['users','trainers','clients'].includes(ex) ? `<span class="av">${esc(l[0]||'?')}</span>${esc(l)}` : esc(l); }
+  if (cur === 'users' && k === 'name') return `<span class="av">${esc(String(v||'?')[0])}</span>${esc(v)}`;
+  if ((k === 'amount' || k === 'hourly_rate') && v != null) return Number(v).toLocaleString('hu-HU') + ' Ft';
+  if (type === 'password') return '••••••';
+  if (type === 'enum') return `<span class="badge b-${esc(v)}">${esc(v)}</span>`;
+  if (type === 'dt') return esc(String(v || '').replace('T', ' '));
+  return esc(v);
+}
+function render() {
+  nav(); stats();
+  const def = T[cur], q = $('q').value.toLowerCase();
+  $('title').textContent = def.n;
+  const rows = DB[cur].filter(r => !q || JSON.stringify(def.f.map(f => f[2]==='fk' ? lab(f[3], r[f[0]]) : r[f[0]])).toLowerCase().includes(q));
+  if (!rows.length) { $('tbl').innerHTML = '<div class="empty"><div>🗂️</div>Nincs megjeleníthető adat.</div>'; return; }
+  $('tbl').innerHTML = '<table><thead><tr><th>ID</th>' + def.f.map(f => `<th>${f[1]}</th>`).join('') + '<th></th></tr></thead><tbody>' +
+    rows.map(r => `<tr><td>${r.id}</td>` + def.f.map(f => `<td title="${esc(r[f[0]])}">${cell(r[f[0]], f)}</td>`).join('') +
+    `<td><button class="btn ghost sm" data-e="${r.id}">Szerk.</button> <button class="btn del sm" data-d="${r.id}">Törlés</button></td></tr>`).join('') + '</tbody></table>';
+  $('tbl').querySelectorAll('[data-e]').forEach(b => b.onclick = () => openForm(+b.dataset.e));
+  $('tbl').querySelectorAll('[data-d]').forEach(b => b.onclick = () => del(+b.dataset.d));
+}
+function del(id) {
+  // idegen kulcs ellenőrzés: nem törölhető, ha másik tábla hivatkozik rá
+  for (const t in T) for (const f of T[t].f)
+    if (f[2] === 'fk' && f[3] === cur && DB[t].some(r => r[f[0]] == id)) return toast(`Nem törölhető: hivatkozik rá a(z) "${T[t].n}" tábla.`);
+  if (!confirm('Biztosan törlöd?')) return;
+  DB[cur] = DB[cur].filter(r => r.id !== id); save(); render();
+}
+function openForm(id) {
+  const def = T[cur], r = id ? find(cur, id) : {};
+  let h = `<h3>${id ? 'Szerkesztés' : 'Új'} – ${def.n}</h3>`;
+  for (const [k, l, type, ex] of def.f) {
+    if (type === 'auto') continue;
+    const v = r[k] ?? '';
+    let inp;
+    if (type === 'textarea') inp = `<textarea name="${k}" rows="3">${esc(v)}</textarea>`;
+    else if (type === 'enum') inp = `<select name="${k}" required>${ex.map(o => `<option ${o===v?'selected':''}>${o}</option>`).join('')}</select>`;
+    else if (type === 'fk') inp = `<select name="${k}" required><option value="">– válassz –</option>${DB[ex].map(o => `<option value="${o.id}" ${o.id==v?'selected':''}>${esc(lab(ex, o.id))}</option>`).join('')}</select>`;
+    else {
+      const t = {int:'number',num:'number',dt:'datetime-local'}[type] || type;
+      inp = `<input name="${k}" type="${t}" value="${esc(v)}" ${type==='num'?'step="0.01"':''} ${type==='int'?'step="1"':''}>`;
+    }
+    h += `<label>${l}</label>${inp}`;
+  }
+  h += '<div class="acts"><button type="button" class="btn ghost" id="cancel">Mégse</button><button class="btn" value="ok">Mentés</button></div>';
+  $('frm').innerHTML = h;
+  $('cancel').onclick = () => $('dlg').close();
+  $('frm').onsubmit = e => {
+    e.preventDefault();
+    const fd = new FormData($('frm')), o = id ? r : { id: Math.max(0, ...DB[cur].map(x => x.id)) + 1 };
+    for (const [k, , type] of def.f) {
+      if (type === 'auto') { if (!id) o[k] = now(); continue; }
+      const v = fd.get(k);
+      o[k] = v === '' ? null : (['int','fk'].includes(type) ? parseInt(v) : type === 'num' ? parseFloat(v) : v);
+    }
+    if (!id) DB[cur].push(o);
+    save(); $('dlg').close(); render();
+  };
+  $('dlg').showModal();
+}
+$('add').onclick = () => openForm();
+$('q').oninput = render;
+render();
+</script>
+</body>
+</html>
