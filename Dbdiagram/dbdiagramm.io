@@ -92,6 +92,23 @@ Table products {
   created_at timestamp
 }
 
+Table refund {
+  id int [pk, increment]
+  client_id int
+  amount decimal
+  refunded_at date
+  status varchar(255)
+  payment_method varchar(255)
+
+}
+
+Table contact {
+  id int [pk, increment]
+  trainer_id int
+  phone_number varchar(20)
+  email varchar(255) [unique]
+  Role varchar(255) 
+}
 Ref trainers_user_fk: trainers.user_id > users.id
 
 Ref clients_user_fk: clients.user_id > users.id
@@ -113,3 +130,7 @@ Ref payments_client_fk: payments.client_id > clients.id
 Ref progress_logs_client_fk: progress_logs.client_id > clients.id
 
 Ref products_client_fk: products.client_id > clients.id
+
+Ref refund_client_fk: refund.client_id > clients.id
+
+Ref contact_Trainer_fk: contact.trainer_id > trainers.id
