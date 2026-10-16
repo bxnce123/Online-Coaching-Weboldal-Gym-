@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kapcsolat – Bence Online Coaching</title>
+  <meta name="description" content="Vedd fel velem a kapcsolatot Instagramon, TikTokon vagy e-mailben.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://app.snipcart.com">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { accent: '#ccff00', base: '#121212', card: '#1a1a1a', line: '#2a2a2a' },
+        fontFamily: { display: ['Oswald', 'Impact', 'sans-serif'], sans: ['Inter', 'system-ui', 'sans-serif'] }
+      } }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer components {
+      .card { @apply bg-card border border-line rounded-sm p-6 flex flex-col transition duration-300 hover:border-accent/50 hover:-translate-y-0.5; }
+      .card h3 { @apply font-display text-2xl text-white leading-tight; }
+      .card p { @apply text-sm text-neutral-400 mt-3 leading-relaxed; }
+      .price { @apply font-display text-4xl text-white mt-6; }
+      .price small { @apply font-sans text-xs text-neutral-500 ml-1; }
+      .note { @apply text-[11px] text-neutral-500 mt-1; }
+      .btn { @apply inline-flex items-center justify-center gap-2 bg-accent text-black font-semibold text-sm px-6 py-3.5 transition duration-300 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent; }
+      .btn-ghost { @apply w-full border border-line bg-transparent text-white mt-auto font-semibold text-sm px-6 py-3 inline-flex items-center justify-center gap-2 transition duration-300 hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent; }
+      .badge { @apply bg-accent text-black text-xs font-bold px-3 py-2 leading-snug; }
+      .tag { @apply text-[10px] text-neutral-400 uppercase tracking-wide; }
+      .sec-title { @apply font-display font-semibold uppercase text-4xl md:text-5xl leading-[1.1] text-white; }
+      .eyebrow { @apply text-xs text-neutral-400 mb-5; }
+      .eyebrow b { @apply text-accent font-medium mr-1; }
+      .navlink { @apply text-sm text-neutral-300 transition-colors hover:text-accent; }
+      .navlink[aria-current="page"] { @apply text-accent; }
+      .icon-btn { @apply relative text-neutral-300 w-9 h-9 inline-flex items-center justify-center transition-colors hover:text-accent; }
+    }
+  </style>
+  <style>
+    body { background: #121212; }
+    /* Mobil menü: lecsúszó animáció */
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+    .menu-open { animation: slideDown .25s ease-out; }
+    /* GYIK accordion */
+    .faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+    .faq-panel.open { grid-template-rows: 1fr; }
+    .faq-icon { transition: transform .3s ease; }
+    .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+    .glow:hover { box-shadow: 0 0 24px rgba(204,255,0,.35); }
+    .hero-bg {
+      background-image: linear-gradient(180deg, rgba(18,18,18,.55) 0%, rgba(18,18,18,.75) 70%, #121212 100%),
+                        url('images/hero.jpg');
+      background-color: #1a1a1a; background-size: cover; background-position: center right;
+    }
+    .about-img { background: #1a1a1a url('images/gym.jpg') center / cover; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body class="font-sans text-neutral-200 antialiased">
+
+  <!-- GLOBAL NAVBAR -->
+  <header class="sticky top-0 z-50 bg-base/90 backdrop-blur border-b border-line">
+    <nav class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Főmenü">
+      <a href="index.html" class="flex items-center gap-3 font-display text-xl text-white tracking-wide">
+        <span class="w-1 h-7 bg-accent" aria-hidden="true"></span>Bence Online Coaching
+      </a>
+      <ul class="hidden lg:flex items-center gap-8">
+        <li><a class="navlink" href="index.html">Főoldal</a></li>
+        <li><a class="navlink" href="coaching.html">Online Coaching</a></li>
+        <li><a class="navlink" href="tervek.html">Edzéstervek</a></li>
+        <li><a class="navlink" href="termekek.html">Termékek</a></li>
+        <li><a class="navlink" href="kapcsolat.html" aria-current="page">Kapcsolat</a></li>
+        <li><a class="navlink" href="rolam.html">Rólam</a></li>
+      </ul>
+      <div class="flex items-center gap-1">
+        <button type="button" class="icon-btn group snipcart-customer-signin" aria-label="Bejelentkezés"><i class="fa-solid fa-right-to-bracket"></i><span role="tooltip" aria-hidden="true" class="pointer-events-none absolute left-1/2 top-full z-50 mt-2.5 origin-top -translate-x-1/2 scale-90 whitespace-nowrap rounded-md border border-line bg-neutral-800 px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100"><span class="absolute -top-1 left-1/2 -ml-1 h-2 w-2 rotate-45 border-l border-t border-line bg-neutral-800"></span>Bejelentkezés</span></button>
+        <button type="button" class="icon-btn group snipcart-customer-signin" aria-label="Regisztráció"><i class="fa-solid fa-user-plus"></i><span role="tooltip" aria-hidden="true" class="pointer-events-none absolute left-1/2 top-full z-50 mt-2.5 origin-top -translate-x-1/2 scale-90 whitespace-nowrap rounded-md border border-line bg-neutral-800 px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100"><span class="absolute -top-1 left-1/2 -ml-1 h-2 w-2 rotate-45 border-l border-t border-line bg-neutral-800"></span>Regisztráció</span></button>
+        <button type="button" class="icon-btn group snipcart-checkout" aria-label="Kosár megnyitása"><i class="fa-solid fa-cart-shopping"></i>
+          <span class="snipcart-items-count absolute -top-0.5 -right-0.5 bg-accent text-black text-[10px] font-bold min-w-4 h-4 px-1 rounded-full inline-flex items-center justify-center">0</span>
+          <span role="tooltip" aria-hidden="true" class="pointer-events-none absolute left-1/2 top-full z-50 mt-2.5 origin-top -translate-x-1/2 scale-90 whitespace-nowrap rounded-md border border-line bg-neutral-800 px-2.5 py-1.5 text-xs font-medium text-white opacity-0 shadow-lg transition duration-200 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100"><span class="absolute -top-1 left-1/2 -ml-1 h-2 w-2 rotate-45 border-l border-t border-line bg-neutral-800"></span>Kosár</span></button>
+        <button id="menuBtn" class="lg:hidden icon-btn" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileMenu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+    <ul id="mobileMenu" class="hidden lg:hidden border-t border-line bg-base px-5 py-3 space-y-1">
+      <li><a class="block py-2 navlink" href="index.html">Főoldal</a></li>
+      <li><a class="block py-2 navlink" href="coaching.html">Online Coaching</a></li>
+      <li><a class="block py-2 navlink" href="tervek.html">Edzéstervek</a></li>
+      <li><a class="block py-2 navlink" href="termekek.html">Termékek</a></li>
+      <li><a class="block py-2 navlink" href="kapcsolat.html" aria-current="page">Kapcsolat</a></li>
+      <li><a class="block py-2 navlink" href="rolam.html">Rólam</a></li>
+    </ul>
+  </header>
+
+  <main class="min-h-[60vh] flex items-center">
+    <section class="w-full max-w-7xl mx-auto px-5 py-24">
+      <p class="text-xs text-accent mb-4">KAPCSOLAT / KEZDJÜK EL EGYÜTT</p>
+      <div class="flex justify-between items-start gap-6">
+        <h1 data-aos="fade-up" class="sec-title">Készen állsz a következő lépésre?</h1>
+        <a href="mailto:bnemeth961@gmail.com" class="text-accent text-5xl leading-none hover:text-white transition-colors" aria-label="Írj nekem e-mailt">↗</a>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-8 text-sm">
+        <a href="https://www.instagram.com/nemethbenceee_/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
+          <i class="fa-brands fa-instagram text-accent text-2xl"></i>
+          <span><span class="block text-[11px] text-neutral-500">Instagram</span><span class="text-white group-hover:text-accent transition-colors">instagram.com/nemethbenceee</span></span>
+        </a>
+        <a href="https://www.tiktok.com/@nemethbenceee_?_r=1&_t=ZN-9AXwGJuSsre" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
+          <i class="fa-brands fa-tiktok text-accent text-2xl"></i>
+          <span><span class="block text-[11px] text-neutral-500">TikTok</span><span class="text-white group-hover:text-accent transition-colors">@nemethbenceee</span></span>
+        </a>
+        <a href="mailto:bnemeth961@gmail.com" class="flex items-center gap-4 group">
+          <i class="fa-regular fa-envelope text-accent text-2xl"></i>
+          <span><span class="block text-[11px] text-neutral-500">Email</span><span class="text-white group-hover:text-accent transition-colors">bnemeth961@gmail.com</span></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- GYIK -->
+  <section id="gyik" class="border-t border-line bg-card/40 py-20" aria-labelledby="gyik-title">
+    <div class="max-w-3xl mx-auto px-5">
+      <h2 id="gyik-title" class="sec-title !text-3xl md:!text-4xl" data-aos="fade-up">Gyakran Ismételt Kérdések</h2>
+      <div class="mt-10 divide-y divide-line border-y border-line">
+        <div data-aos="fade-up" data-aos-delay="0">
+          <h3><button type="button" id="faq-btn-1" class="faq-btn w-full flex justify-between items-center gap-6 py-5 text-left font-display text-xl text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent" aria-expanded="false" aria-controls="faq-1">
+            <span>Hogyan kapom meg az edzéstervet fizetés után?</span><i class="fa-solid fa-plus faq-icon text-accent text-sm" aria-hidden="true"></i>
+          </button></h3>
+          <div id="faq-1" class="faq-panel" role="region" aria-labelledby="faq-btn-1"><div class="overflow-hidden"><p class="pb-5 text-neutral-400 leading-relaxed">A sikeres fizetést követően 24 órán belül e-mailben küldöm el a részletes PDF dokumentumot.</p></div></div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h3><button type="button" id="faq-btn-2" class="faq-btn w-full flex justify-between items-center gap-6 py-5 text-left font-display text-xl text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent" aria-expanded="false" aria-controls="faq-2">
+            <span>Kezdők is elkezdhetik a programokat?</span><i class="fa-solid fa-plus faq-icon text-accent text-sm" aria-hidden="true"></i>
+          </button></h3>
+          <div id="faq-2" class="faq-panel" role="region" aria-labelledby="faq-btn-2"><div class="overflow-hidden"><p class="pb-5 text-neutral-400 leading-relaxed">Abszolút! A tervek úgy vannak felépítve, hogy a teljesen kezdőktől a haladókig mindenki profitálhat belőlük.</p></div></div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <h3><button type="button" id="faq-btn-3" class="faq-btn w-full flex justify-between items-center gap-6 py-5 text-left font-display text-xl text-white transition-colors hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent" aria-expanded="false" aria-controls="faq-3">
+            <span>Mi történik a személyi edzés vásárlása után?</span><i class="fa-solid fa-plus faq-icon text-accent text-sm" aria-hidden="true"></i>
+          </button></h3>
+          <div id="faq-3" class="faq-panel" role="region" aria-labelledby="faq-btn-3"><div class="overflow-hidden"><p class="pb-5 text-neutral-400 leading-relaxed">Vásárlás után felveszem veled a kapcsolatot e-mailben, és egyeztetünk egy időpontot az első konzultációra és állapotfelmérésre.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="border-t border-line bg-base">
+    <div class="max-w-7xl mx-auto px-5 py-10 grid md:grid-cols-3 gap-8 items-start text-sm">
+      <div>
+        <a href="index.html" class="font-display text-xl text-white">Bence Online Coaching</a>
+        <div class="flex gap-3 mt-4">
+          <a href="https://www.instagram.com/nemethbenceee_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 border border-line inline-flex items-center justify-center text-neutral-300 transition hover:text-accent hover:border-accent"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@nemethbenceee_?_r=1&_t=ZN-9AXwGJuSsre" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="w-10 h-10 border border-line inline-flex items-center justify-center text-neutral-300 transition hover:text-accent hover:border-accent"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="mailto:bnemeth961@gmail.com" aria-label="E-mail" class="w-10 h-10 border border-line inline-flex items-center justify-center text-neutral-300 transition hover:text-accent hover:border-accent"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <ul class="space-y-1.5 text-neutral-400">
+        <li><a class="hover:text-accent transition-colors" href="mailto:bnemeth961@gmail.com">bnemeth961@gmail.com</a></li>
+        <li><a class="hover:text-accent transition-colors" href="mailto:okijovan12@gmail.com">okijovan12@gmail.com</a></li>
+        <li><a class="hover:text-accent transition-colors" href="mailto:szavince@gmail.com">szavince@gmail.com</a></li>
+      </ul>
+      <div class="md:text-right text-xs text-neutral-500 space-y-2">
+        <p>© <span id="year">2026</span> Bence Online Coaching. Minden jog fenntartva.</p>
+        <p><a href="#" class="hover:text-accent transition-colors">Adatkezelés</a> · <a href="#" class="hover:text-accent transition-colors">ÁSZF</a></p>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Süti-banner -->
+  <div id="cookieBanner" class="hidden fixed bottom-0 inset-x-0 z-50 bg-card border-t border-accent/40 shadow-[0_-8px_30px_rgba(0,0,0,.5)]" role="region" aria-label="Süti tájékoztató">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <p class="text-sm text-neutral-300">Ez a weboldal sütiket (cookie-kat) használ a legjobb felhasználói élmény biztosítása érdekében.</p>
+      <button id="cookieAccept" type="button" class="btn !py-2.5 shrink-0">Elfogadom</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <!-- Snipcart v3.0.31 -->
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+  <div hidden id="snipcart" data-api-key="MjdlZjYyMWItOWQ5Zi00MmYyLWFhNzAtYzc1OWE4M2ZmNGI2NjM5Mjc2NTY4ODQ2MTEyMDQ2"></div>
+</body>
+</html>
