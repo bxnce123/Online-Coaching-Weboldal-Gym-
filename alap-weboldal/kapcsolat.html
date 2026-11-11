@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kapcsolat – Online Coaching</title>
+  <meta name="description" content="Vedd fel velem a kapcsolatot Instagramon, TikTokon vagy e-mailben.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Ugrás a tartalomra</a>
+  <header class="site-head">
+    <div class="wrap head-in">
+      <a href="index.html" class="brand">Online <span>Coaching</span></a>
+      <button type="button" class="menu-btn" data-menu-btn aria-expanded="false" aria-controls="nav">Menü</button>
+      <nav id="nav" class="nav" data-nav aria-label="Fő menü">
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="coaching.html">Online Coaching</a></li>
+          <li><a href="edzestervek.html">Edzéstervek</a></li>
+          <li><a href="termekek.html">Termékek</a></li>
+          <li><a href="kalkulator.html">Kalkulátor</a></li>
+          <li><a href="rolam.html">Rólam</a></li>
+          <li><a href="kapcsolat.html" aria-current="page">Kapcsolat</a></li>
+        </ul>
+      </nav>
+      <a href="kosar.html" class="cart-link" data-cart-link aria-label="Kosár"><span class="cart-txt">Kosár</span> <span class="cart-count" data-cart-count>0</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <div class="frame">
+          <p class="crumb label"><a href="index.html">Főoldal</a> / Kapcsolat</p>
+          <h1 class="h-display">Kapcsolat</h1>
+          <p class="lead">Kérdésed van a programokról? Írj nekem bátran – a leggyorsabban Instagramon válaszolok.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid grid-2" style="align-items:start">
+        <div class="grid">
+          <a class="contact-row" href="https://www.instagram.com/nemethbenceee_/" target="_blank" rel="noopener noreferrer"><span><span class="label">Instagram</span>@nemethbenceee_</span><span aria-hidden="true">↗</span></a>
+          <a class="contact-row" href="https://www.tiktok.com/@nemethbenceee_" target="_blank" rel="noopener noreferrer"><span><span class="label">TikTok</span>@nemethbenceee_</span><span aria-hidden="true">↗</span></a>
+          <a class="contact-row" href="https://discord.gg/aUrcRJ8ePp" target="_blank" rel="noopener noreferrer"><span><span class="label">Discord</span>Ingyenes privát közösség</span><span aria-hidden="true">↗</span></a>
+          <a class="contact-row" href="mailto:bnemeth961@gmail.com"><span><span class="label">E-mail</span>bnemeth961@gmail.com</span><span aria-hidden="true">→</span></a>
+        </div>
+        <form class="form" data-contact novalidate>
+          <h2 class="h-card">Írj üzenetet</h2>
+          <div class="field"><label for="name">Neved</label><input id="name" name="name" class="fld" autocomplete="name" aria-describedby="err-name"><p class="err" id="err-name"></p></div>
+          <div class="field"><label for="email">E-mail-címed</label><input id="email" name="email" type="email" class="fld" autocomplete="email" aria-describedby="err-email"><p class="err" id="err-email"></p></div>
+          <div class="field"><label for="message">Üzenet</label><textarea id="message" name="message" class="fld" aria-describedby="err-message"></textarea><p class="err" id="err-message"></p></div>
+          <button type="submit" class="btn btn-block">Üzenet küldése</button>
+          <p class="msg ok" data-contact-msg role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot">
+    <div class="wrap foot-top">
+      <div class="foot-col">
+        <a href="index.html" class="brand">Online <span>Coaching</span></a>
+        <p class="muted" style="margin-top:14px;max-width:34ch">Személyre szabott edzés, étrend és kész edzéstervek – rendszer, amit tényleg végig tudsz vinni.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Oldalak</h2>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="coaching.html">Online Coaching</a></li>
+          <li><a href="edzestervek.html">Edzéstervek</a></li>
+          <li><a href="termekek.html">Termékek</a></li>
+          <li><a href="kalkulator.html">Kalkulátor</a></li>
+          <li><a href="rolam.html">Rólam</a></li>
+          <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Közösség</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/nemethbenceee_/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@nemethbenceee_" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          <li><a href="https://discord.gg/aUrcRJ8ePp" target="_blank" rel="noopener noreferrer">Discord</a></li>
+          <li><a href="mailto:bnemeth961@gmail.com">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <span>© <span data-year>2026</span> Online Coaching</span>
+      <span>Vizsgaremek – alap (csak frontend) verzió</span>
+    </div>
+  </footer>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

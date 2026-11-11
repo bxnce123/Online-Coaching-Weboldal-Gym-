@@ -1,0 +1,9 @@
+A mappában lévő betűtípusok (Archivo, Inter, JetBrains Mono) a Google Fonts-ról
+származnak, és a SIL Open Font License 1.1 alatt használhatók:
+https://openfontlicense.org
+
+- Archivo – Copyright The Archivo Project Authors
+- Inter – Copyright The Inter Project Authors
+- JetBrains Mono – Copyright The JetBrains Mono Project Authors
+
+A fájlokat a tools/fetch-fonts.js tölti le (csak latin és latin-ext készlet).

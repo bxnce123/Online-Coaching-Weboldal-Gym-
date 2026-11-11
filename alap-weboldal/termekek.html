@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Termékek és csomagok – Online Coaching</title>
+  <meta name="description" content="Edzéstervek, személyre szabott étrend, online coaching és csomagok.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Ugrás a tartalomra</a>
+  <header class="site-head">
+    <div class="wrap head-in">
+      <a href="index.html" class="brand">Online <span>Coaching</span></a>
+      <button type="button" class="menu-btn" data-menu-btn aria-expanded="false" aria-controls="nav">Menü</button>
+      <nav id="nav" class="nav" data-nav aria-label="Fő menü">
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="coaching.html">Online Coaching</a></li>
+          <li><a href="edzestervek.html">Edzéstervek</a></li>
+          <li><a href="termekek.html" aria-current="page">Termékek</a></li>
+          <li><a href="kalkulator.html">Kalkulátor</a></li>
+          <li><a href="rolam.html">Rólam</a></li>
+          <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+      <a href="kosar.html" class="cart-link" data-cart-link aria-label="Kosár"><span class="cart-txt">Kosár</span> <span class="cart-count" data-cart-count>0</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <div class="frame">
+          <p class="crumb label"><a href="index.html">Főoldal</a> / Termékek</p>
+          <h1 class="h-display">Termékek és csomagok</h1>
+          <p class="lead">Minden, amit megvásárolhatsz – szűrd kategória szerint.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filter" data-filter role="group" aria-label="Termékek szűrése">
+          <button type="button" data-f="all" aria-pressed="true">Összes</button>
+          <button type="button" data-f="coaching" aria-pressed="false">Coaching</button>
+          <button type="button" data-f="terv" aria-pressed="false">Edzésterv</button>
+          <button type="button" data-f="etrend" aria-pressed="false">Étrend</button>
+          <button type="button" data-f="csomag" aria-pressed="false">Csomag</button>
+          <button type="button" data-f="szemelyi" aria-pressed="false">Személyi edzés</button>
+        </div>
+        <div class="grid grid-3">
+          <article class="card" data-cat="csomag etrend terv">
+            <div class="cover  cover--photo" aria-hidden="true"><img src="img/etel-tal-800.webp" alt="" loading="lazy" width="800" height="600"><span class="label">Csomag</span><span class="cover-word">PPL+</span><span class="label">Push-Pull-Legs + étrend</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Push-Pull-Legs + Étrend</h3></div>
+              <p class="muted">Push-Pull-Legs edzésterv és személyre szabott étrend egy csomagban.</p>
+              <p class="note">Külön megvéve: 33 899 Ft</p>
+              <div class="card-foot"><p class="price">25 999 Ft<small>/ csomag</small></p><button type="button" class="btn btn-sm" data-add="ppl-etrend-csomag">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" data-cat="csomag etrend terv">
+            <div class="cover  cover--photo" aria-hidden="true"><img src="img/etel-bowl-800.webp" alt="" loading="lazy" width="800" height="600"><span class="label">Csomag</span><span class="cover-word">U/L+</span><span class="label">Upper Lower + étrend</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Upper Lower + Étrend</h3><span class="pill pill--lime">Bence kedvence</span></div>
+              <p class="muted">Felsőtest-Alsótest edzésterv és személyre szabott étrend egy csomagban.</p>
+              <p class="note">Külön megvéve: 33 899 Ft</p>
+              <div class="card-foot"><p class="price">20 999 Ft<small>/ csomag</small></p><button type="button" class="btn btn-sm" data-add="upper-lower-etrend-csomag">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card card--lime" data-cat="coaching">
+            <div class="cover cover--lime" aria-hidden="true"><span class="label">Havi</span><span class="cover-word">1:1</span><span class="label">Heti követés · Chat · Discord</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Online coaching</h3><span class="pill">Legjobb választás</span></div>
+              <p class="muted">1:1 program, heti állapotkövetés, edzéstervezés és étrendi támogatás.</p>
+              
+              <div class="card-foot"><p class="price">39 900 Ft<small>/ hó</small></p><button type="button" class="btn-dark btn-sm" data-add="online-coaching">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" data-cat="coaching terv">
+            <div class="cover cover--outline" aria-hidden="true"><span class="label">Havi</span><span class="cover-word">Egyéni</span><span class="label">Heti check-in · Hívás</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Személyre szabott edzésterv</h3></div>
+              <p class="muted">Neked írt edzésterv heti check-innel: minden héten átnézzük a haladásod, és ha kell, hívásban is egyeztetünk.</p>
+              
+              <div class="card-foot"><p class="price">19 900 Ft<small>/ hó</small></p><button type="button" class="btn btn-sm" data-add="szemelyre-szabott-edzesterv">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" data-cat="etrend">
+            <div class="cover  cover--photo" aria-hidden="true"><img src="img/etel-csirke-rizs-800.webp" alt="" loading="lazy" width="800" height="600"><span class="label">Egyéni</span><span class="cover-word">Étrend</span><span class="label">Makrók · Napi menü</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Személyre szabott étrend</h3></div>
+              <p class="muted">Egyéni makrók, étrendi iránymutatás és gyakorlati javaslatok a célodhoz igazítva.</p>
+              
+              <div class="card-foot"><p class="price">24 900 Ft<small>/ terv</small></p><button type="button" class="btn btn-sm" data-add="szemelyre-szabott-etrend">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" data-cat="szemelyi">
+            <div class="cover " aria-hidden="true"><span class="label">Dombóvár</span><span class="cover-word">Edzés</span><span class="label">Technika · Fókusz</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Személyi edzés</h3></div>
+              <p class="muted">Egyéni edzés, technikaellenőrzés és fókuszált támogatás a teremben.</p>
+              <p class="note">Kizárólag Dombóváron és 15 km-es körzetében elérhető.</p>
+              <div class="card-foot"><p class="price">7 000 Ft<small>/ alkalom</small></p><button type="button" class="btn btn-sm" data-add="szemelyi-edzes">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" data-cat="coaching">
+            <div class="cover cover--outline" aria-hidden="true"><span class="label">Videó alapján</span><span class="cover-word">Form</span><span class="label">Guggolás · Fekvenyomás · Felhúzás</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Technika-ellenőrzés</h3></div>
+              <p class="muted">Küldj videót a gyakorlataidról, és írásban visszajelzést adok a kivitelezésedről, javítási tippekkel.</p>
+              
+              <div class="card-foot"><p class="price">4 990 Ft<small>/ alkalom</small></p><button type="button" class="btn btn-sm" data-add="technika-ellenorzes">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" data-cat="etrend">
+            <div class="cover " aria-hidden="true"><span class="label">PDF</span><span class="cover-word">Recept</span><span class="label">Fehérjedús · Egyszerű</span></div>
+            <div class="card-body">
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><h3 class="h-card">Fitt receptfüzet</h3></div>
+              <p class="muted">Egyszerű, fehérjedús receptek makrókkal, hogy az étrended a hétköznapokban is tartható legyen.</p>
+              
+              <div class="card-foot"><p class="price">4 990 Ft<small>/ PDF</small></p><button type="button" class="btn btn-sm" data-add="fitt-receptfuzet">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" id="ppl-terv" data-cat="terv">
+            <div class="cover " aria-hidden="true"><span class="label">PDF</span><span class="cover-word">PPL</span><span class="label">Heti 3 vagy 6 edzés</span></div>
+            <div class="card-body">
+              <h3 class="h-card">Push-Pull-Legs (PPL)</h3>
+              <p class="muted">Akár többször is megismételhető egy héten, ami tökéletes az izomépítésre.</p>
+              <div class="tags"><span class="tag">Középhaladó–Haladó</span><span class="tag">Izomépítés</span></div>
+              <div class="card-foot"><p class="price">8 999 Ft<small>/ terv</small></p><button type="button" class="btn btn-sm" data-add="ppl-terv">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" id="felsotest-alsotest-terv" data-cat="terv">
+            <div class="cover cover--lime" aria-hidden="true"><span class="label">PDF</span><span class="cover-word">U/L</span><span class="label">Heti 4 edzés</span></div>
+            <div class="card-body">
+              <h3 class="h-card">Felsőtest-Alsótest</h3>
+              <p class="muted">Többször is megismételhető a héten, tökéletes az izomépítésre.</p>
+              <div class="tags"><span class="tag">Minden szint</span><span class="tag">Izomépítés, Erőnövelés</span></div>
+              <div class="card-foot"><p class="price">8 999 Ft<small>/ terv</small></p><button type="button" class="btn btn-sm" data-add="felsotest-alsotest-terv">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" id="full-body-terv" data-cat="terv">
+            <div class="cover cover--outline" aria-hidden="true"><span class="label">PDF</span><span class="cover-word">Full</span><span class="label">Heti 3 edzés</span></div>
+            <div class="card-body">
+              <h3 class="h-card">Full Body</h3>
+              <p class="muted">Többször is megismételhető a héten, tökéletes az izomépítésre.</p>
+              <div class="tags"><span class="tag">Kezdő–Középhaladó</span><span class="tag">Izomépítés, Szálkásítás</span></div>
+              <div class="card-foot"><p class="price">8 999 Ft<small>/ terv</small></p><button type="button" class="btn btn-sm" data-add="full-body-terv">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" id="bro-split-terv" data-cat="terv">
+            <div class="cover cover--outline" aria-hidden="true"><span class="label">PDF</span><span class="cover-word">Bro</span><span class="label">Heti 5 edzés</span></div>
+            <div class="card-body">
+              <h3 class="h-card">Testrész-split (Bro split)</h3>
+              <p class="muted">Heti 5 edzés, minden nap egy izomcsoport kap teljes figyelmet – a testépítők klasszikus felosztása.</p>
+              <div class="tags"><span class="tag">Középhaladó–Haladó</span><span class="tag">Izomépítés</span></div>
+              <div class="card-foot"><p class="price">8 999 Ft<small>/ terv</small></p><button type="button" class="btn btn-sm" data-add="bro-split-terv">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" id="arnold-split-terv" data-cat="terv">
+            <div class="cover " aria-hidden="true"><span class="label">PDF</span><span class="cover-word">Arnold</span><span class="label">Heti 6 edzés</span></div>
+            <div class="card-body">
+              <h3 class="h-card">Arnold split</h3>
+              <p class="muted">Heti 6 edzés, három nap kétszer ismételve: mell–hát, váll–kar és láb. Haladóknak, nagy edzésvolumennel.</p>
+              <div class="tags"><span class="tag">Haladó</span><span class="tag">Izomépítés</span></div>
+              <div class="card-foot"><p class="price">8 999 Ft<small>/ terv</small></p><button type="button" class="btn btn-sm" data-add="arnold-split-terv">Kosárba rakom</button></div>
+            </div>
+          </article>
+          <article class="card" id="kalisztenika-terv" data-cat="terv">
+            <div class="cover cover--outline" aria-hidden="true"><span class="label">PDF</span><span class="cover-word">Cali</span><span class="label">Heti 3–4 edzés</span></div>
+            <div class="card-body">
+              <h3 class="h-card">Saját testsúlyos (kalisztenika)</h3>
+              <p class="muted">Heti 3–4 edzés felszerelés nélkül: húzódzkodás, tolódzkodás, fekvőtámasz és lábgyakorlatok parkban vagy otthon.</p>
+              <div class="tags"><span class="tag">Kezdő–Középhaladó</span><span class="tag">Izomépítés, Szálkásítás</span></div>
+              <div class="card-foot"><p class="price">8 999 Ft<small>/ terv</small></p><button type="button" class="btn btn-sm" data-add="kalisztenika-terv">Kosárba rakom</button></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-foot">
+    <div class="wrap foot-top">
+      <div class="foot-col">
+        <a href="index.html" class="brand">Online <span>Coaching</span></a>
+        <p class="muted" style="margin-top:14px;max-width:34ch">Személyre szabott edzés, étrend és kész edzéstervek – rendszer, amit tényleg végig tudsz vinni.</p>
+      </div>
+      <div class="foot-col">
+        <h2>Oldalak</h2>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="coaching.html">Online Coaching</a></li>
+          <li><a href="edzestervek.html">Edzéstervek</a></li>
+          <li><a href="termekek.html">Termékek</a></li>
+          <li><a href="kalkulator.html">Kalkulátor</a></li>
+          <li><a href="rolam.html">Rólam</a></li>
+          <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h2>Közösség</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/nemethbenceee_/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@nemethbenceee_" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          <li><a href="https://discord.gg/aUrcRJ8ePp" target="_blank" rel="noopener noreferrer">Discord</a></li>
+          <li><a href="mailto:bnemeth961@gmail.com">E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <span>© <span data-year>2026</span> Online Coaching</span>
+      <span>Vizsgaremek – alap (csak frontend) verzió</span>
+    </div>
+  </footer>
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
